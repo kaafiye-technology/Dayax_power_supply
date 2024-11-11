@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Dayax Power Supply",
+    "slug": "dayax-power-supply",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logodayax.png",
+    "image": "./assets/logodayax.png",
+    "resizeMode": "contain",
+    "backgroundColor": "#ffffff",
+    "extra": {
+      "eas": {
+        "projectId": "60851604-9658-4639-a64e-65158624c1f8"
+      }
+    }
+  },
+  "updates": {
+    "fallbackToCacheTimeout": 0
+  },
+  "assetBundlePatterns": [
+    "**/*"
+  ],
+  "ios": {
+    "supportsTablet": true,
+    "bundleIdentifier": "com.Dayaxpowersupply.net"
+  },
+  "android": {
+    "package": "com.Dayaxpowersupply.net",
+    "versionCode": 1,
+    "permissions": []
+  }
+}
