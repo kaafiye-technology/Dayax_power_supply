@@ -7,7 +7,7 @@ const CustomerStatement = () => {
   const [statement, setStatement] = useState([]);
   const [loading, setLoading] = useState(false);
   const [secondData, setSecondData] = useState([]);
-  const url = 'http://dayaxpowers.com/api/report';
+  const url = 'https://dayaxpowers.com/api/report';
 
   const fetchBalance = async () => {
     try {

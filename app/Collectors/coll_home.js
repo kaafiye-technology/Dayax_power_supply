@@ -8,18 +8,18 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const { width, height } = Dimensions.get('window');  // Get screen width and height
 
 const Semesters = () => {
-  const url = 'http://dayaxpowers.com/api/report';
+  const url = 'https://dayaxpowers.com/api/report';
 
   const [balance, setBalance] = useState([]);
   const [secondData, setSecondData] = useState([]); // For the second API response
   const [error, setError] = useState(null); // To handle errors
-  
+  const [user, setUser] = useState([]);
   const fetchBalance = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem('user');
       if (jsonValue != null) {
         const userData = JSON.parse(jsonValue);
-        
+        setUser(userData);
         const values1 = {
           sp: 540,
           std_id: userData.result.auto_id
@@ -69,22 +69,42 @@ const Semesters = () => {
         <Icon name="arrow-right" size={25} color="black" style={styles.icon1} />
       </Pressable>
 
-       
-      {/* <Pressable style={styles.feature}    onPress={() => router.push('/Collectors/pending_problem')}>
-        <Icon name="dots-grid" size={30} color="#FF9800" />
-        <Text style={styles.featureText}>  Pending Problem Customer  </Text>
-        <Icon name="arrow-right" size={25} color="black" style={styles.icon} />
-      </Pressable> */}
-     
-
-      <Pressable style={styles.feature}   onPress={() => router.push('/Collectors/process_problem')}> 
-        <Icon name="dots-grid" size={30} color="#FF9800" />
-        <Text style={styles.featureText}>  Process Problem Customer  </Text>
-        <Icon name="arrow-right" size={25} color="black" style={styles.icon} />
-      </Pressable>
-
       
+      {user?.result?.title_id === '300' ? (
+ 
+  <>
+    <Pressable
+      style={styles.feature}
+      onPress={() => router.push('/Collectors/reg_problem_customer')}
+    >
+      <Icon name="pencil" size={30} color="#FF9800" />
+      <Text style={styles.featureText}>Reg Problem Customer</Text>
+      <Icon name="arrow-right" size={25} color="black" style={styles.icon} />
+    </Pressable>
 
+    <Pressable
+      style={styles.feature}
+      onPress={() => router.push('/Collectors/pending_problem')}
+    >
+      <Icon name="dots-grid" size={20} color="#FF9800" />
+      <Text style={styles.featureText}>Pending Problem Customer</Text>
+      <Icon name="arrow-right" size={25} color="black" style={styles.icon} />
+    </Pressable>
+
+    
+  </>
+) : (
+
+  // Else case: render a message or nothing
+  <Pressable
+      style={styles.feature}
+      onPress={() => router.push('/Collectors/process_problem')}
+    >
+      <Icon name="dots-grid" size={20} color="#FF9800" />
+      <Text style={styles.featureText}>Process Problem Customer</Text>
+      <Icon name="arrow-right" size={25} color="black" style={styles.icon} />
+    </Pressable>
+)}
 
 
    
@@ -120,13 +140,23 @@ const styles = StyleSheet.create({
   feature: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',  // Center content horizontally
     backgroundColor: '#FFF',
-    padding: Platform.OS === 'ios' ? 20 : 13,  // Different padding for iOS and Android
+    paddingVertical: 15, // Adjust top and bottom padding
+    paddingHorizontal: 20, // Equal left and right padding
     marginVertical: 10,
-    borderRadius: 10,
-    elevation: 2,
-    
+    marginHorizontal: 20, // Horizontal margin for spacing between buttons
+    borderRadius: 50, // Circular button with consistent border radius
+    borderWidth: 2, // Border thickness
+    borderColor: '#FF9800', // Example border color
+    elevation: 4, // Android shadow
+    shadowColor: '#000', // iOS shadow color
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
   },
+
+  
   title: {
     fontSize: width * 0.12,  // Responsive font size
     fontWeight: 'bold',
@@ -145,7 +175,7 @@ const styles = StyleSheet.create({
   },
   featureText: {
     fontSize: width * 0.045,  // Responsive font size
-    marginLeft: 40,
+    marginLeft: 10,
     color: '#333',
   },
   icon: {

@@ -22,7 +22,7 @@ const App = () => {
       const values2 = { sp: 812, cust_id: searchId, action_p: 'cust_info'};
 
       //Make Axios POST request for values1 (subjects)
-      const response1 = await axios.post('http://dayaxpowers.com/api/report', values2);  
+      const response1 = await axios.post('https://dayaxpowers.com/api/report', values2);  
       const result1 = response1.data.result;
     //  setSemesters(result1);
     setResults(result1);
@@ -38,7 +38,7 @@ const App = () => {
 
       <TextInput
         style={styles.input}
-        placeholder="Enter ID"
+        placeholder="Enter Guri no or Tell"
         keyboardType='numeric'
         value={searchId}
         onChangeText={setSearchId}
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   input: {
-    height: 40,
+    height: 50,
     width: '80%',
     borderColor: '#ddd',        // Light gray border
     borderWidth: 1,             // Border width
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     paddingLeft: 8,             // Padding on the left for better spacing
     marginBottom: 20,           // Space below the input field
     color: 'white',              // Text color inside the input (dark gray)
-    fontSize: 20,               // Font size for text
+    fontSize: 15,               // Font size for text
     fontWeight: 'normal',       // Font weight for text (normal or bold)
     
    

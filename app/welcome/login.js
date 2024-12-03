@@ -7,7 +7,8 @@ import { router } from 'expo-router';
 
 
 export default function Login(){
-    const url = 'http://dayaxpowers.com/api/report'
+    
+    const url = 'https://dayaxpowers.com/api/report'
     const [values, setValues] = useState({
         sp: 811,
         username: '',

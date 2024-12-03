@@ -9,7 +9,7 @@ import axios from 'axios';
 
 const TableComponent = () => {
   const [secondData, setSecondData] = useState([]);  
-  const url = 'http://dayaxpowers.com/api/report';
+  const url = 'https://dayaxpowers.com/api/report';
   const fetchBalance = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem('user');

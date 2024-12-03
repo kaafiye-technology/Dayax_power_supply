@@ -57,14 +57,14 @@ const SemesterSubjects = () => {
         const values2 = { sp: 815, user_id: userData.result.auto_id};
 
         // Make Axios POST request for values1 (subjects)
-        const response1 = await axios.post('http://dayaxpowers.com/api/report', values2);  
+        const response1 = await axios.post('https://dayaxpowers.com/api/report', values2);  
         const result1 = response1.data.result;
         setSemesters(result1);
         setFarsamo(result1)
         console.log('Semester (Response 1):', result1);
 
         // Make Axios POST request for values2 (dropdown options)
-        const response2 = await axios.post('http://dayaxpowers.com/api/report', values1);  
+        const response2 = await axios.post('https://dayaxpowers.com/api/report', values1);  
         const result2 = response2.data.result;
         setSubjects(result2);
         console.log('Subjects (Response 2):', result2);
@@ -132,18 +132,18 @@ const SemesterSubjects = () => {
                 id_pro: id_pro,
                 type_p: 'Pending',
                 emp_p: f1,
-                emp2_p: f2,
+                
                 _done_description: description,  // Pass the actual description here
                 user_p: userData.result.auto_id,
               };
 
               // Make the POST request for saving the description
               console.log ('request',values3)
-              const response3 = await axios.post('http://dayaxpowers.com/api/report', values3);
+              const response3 = await axios.post('https://dayaxpowers.com/api/report', values3);
               console.log('Description submitted:', response3.data);  // Log the response data
         //    }
        
-        alert('Qiimayntada Wa La Diwangaliyay!');
+        alert('Wa La Diwangaliyay!');
       //  reloadScreen();
       fetchSemesters();
       }
@@ -230,7 +230,7 @@ const SemesterSubjects = () => {
                         handleDropdownChange1(itemValue)
                       }
                     >
-                      <Picker.Item label="Dooro farsamo yaqaan 1" value={0} />
+                      <Picker.Item label="Dooro farsamo yaqaan" value={0} />
                       {farsamo.map((option) => ( 
                         <Picker.Item key={option.auto_id} label={option.name} value={option.auto_id} />
                       ))}
@@ -238,7 +238,7 @@ const SemesterSubjects = () => {
                   </View>
                   
                   {/* Replacing stars with dropdown menus */}
-                  <View style={styles.dropdownContainer}>
+                  {/* <View style={styles.dropdownContainer}>
                     <Picker
                       selectedValue={f2}
                       onValueChange={(itemValue) =>
@@ -250,7 +250,7 @@ const SemesterSubjects = () => {
                         <Picker.Item key={option.auto_id} label={option.name} value={option.auto_id} />
                       ))}
                     </Picker>
-                  </View>
+                  </View> */}
                   
 
               <TextInput

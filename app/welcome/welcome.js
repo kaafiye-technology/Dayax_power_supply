@@ -2,16 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { View, ActivityIndicator, ImageBackground, StyleSheet } from 'react-native';
 import axios from 'axios';
 
-const reportUrl = `http:///api/report`;
+const reportUrl = `https://dayaxpowers.com/api/report`;
 
 const WelcomeScreen = () => {
   const [departments, setDepartments] = useState([]);
   const [loading, setLoading] = useState(true);
   
-  const values = {
-    sp: 576,
-    faculty_id: '%'
-  };
+  
 
   useEffect(() => {
     const fetchData = async () => {

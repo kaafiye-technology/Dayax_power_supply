@@ -8,7 +8,7 @@ import { router } from 'expo-router';
 const ProfileScreen = () => {
 
 
-  const url = 'http://dayaxpowers.com/api/report'
+  const url = 'https://dayaxpowers.com/api/report'
    
     const [user, setUser] = useState([]);
   
@@ -55,7 +55,7 @@ const ProfileScreen = () => {
       {/* Profile Image */}
       <View style={styles.profileImageContainer}>
         <Image
-          source={{uri: 'http://dayaxpowers.com/uploads/ktc_edit_sp/logo/logodayax.png_ktceditsp_20240925200242.png' }}
+          source={{uri: 'https://dayaxpowers.com/uploads/ktc_edit_sp/logo/logodayax.png_ktceditsp_20240925200242.png' }}
           style={styles.profileImage}
 
 

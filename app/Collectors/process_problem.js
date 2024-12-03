@@ -52,13 +52,13 @@ const SemesterSubjects = () => {
         const values2 = { sp: 815, user_id: userData.result.auto_id};
 
         // Make Axios POST request for values1 (subjects)
-        const response1 = await axios.post('http://dayaxpowers.com/api/report', values2);  
+        const response1 = await axios.post('https://dayaxpowers.com/api/report', values2);  
         const result1 = response1.data.result;
         setSemesters(result1);
         console.log('Semester (Response 1):', result1);
 
         // Make Axios POST request for values2 (dropdown options)
-        const response2 = await axios.post('http://dayaxpowers.com/api/report', values1);  
+        const response2 = await axios.post('https://dayaxpowers.com/api/report', values1);  
         const result2 = response2.data.result;
         setSubjects(result2);
         console.log('Subjects (Response 2):', result2);
@@ -129,11 +129,11 @@ const SemesterSubjects = () => {
 
               // Make the POST request for saving the description
               console.log ('request',values3)
-              const response3 = await axios.post('http://dayaxpowers.com/api/report', values3);
+              const response3 = await axios.post('https://dayaxpowers.com/api/report', values3);
               console.log('Description submitted:', response3.data);  // Log the response data
         //    }
        
-        alert('Qiimayntada Wa La Diwangaliyay!');
+        alert('Wa La Diwangaliyay!');
       //  reloadScreen();
       fetchSemesters();
       }
@@ -179,39 +179,39 @@ const SemesterSubjects = () => {
             <View style={styles.expandedContainer}>
                  <View style={styles.tableRow}>
                 <Text style={styles.rowLabel}>Problem ID:</Text>
-                <Text style={styles.rowValue}>{subject.id || 'No lecturer assigned'}</Text>
+                <Text style={styles.rowValue}>{subject.id || 'No  data'}</Text>
               </View>
               <View style={styles.tableRow}>
                 <Text style={styles.rowLabel}>Magaca:</Text>
-                <Text style={styles.rowValue}>{subject.Magaca || 'No lecturer assigned'}</Text>
+                <Text style={styles.rowValue}>{subject.Magaca || 'No data'}</Text>
               </View>
               <View style={styles.tableRow}>
                 <Text style={styles.rowLabel}>Tell:</Text>
-                <Text style={styles.rowValue}>{subject.tell2 || 'No lecturer assigned'}</Text>
+                <Text style={styles.rowValue}>{subject.tell2 || 'No data'}</Text>
               </View>
               <View style={styles.tableRow}>
                 <Text style={styles.rowLabel}>Tell2 :</Text>
-                <Text style={styles.rowValue}>{subject.tell || 'No lecturer assigned'}</Text>
+                <Text style={styles.rowValue}>{subject.tell || 'No data'}</Text>
               </View>
               <View style={styles.tableRow}>
                 <Text style={styles.rowLabel}>Xarunta:</Text>
-                <Text style={styles.rowValue}>{subject.Branch || 'No lecturer assigned'}</Text>
+                <Text style={styles.rowValue}>{subject.Branch || 'No data'}</Text>
               </View>
               <View style={styles.tableRow}>
                 <Text style={styles.rowLabel}>Zone:</Text>
-                <Text style={styles.rowValue}>{subject.Zone || 'No lecturer assigned'}</Text>
+                <Text style={styles.rowValue}>{subject.Zone || 'No date'}</Text>
               </View>
               <View style={styles.tableRow}>
                 <Text style={styles.rowLabel}>Deriska:</Text>
-                <Text style={styles.rowValue}>{subject.Deriska || 'No lecturer assigned'}</Text>
+                <Text style={styles.rowValue}>{subject.Deriska || 'No date'}</Text>
               </View>
               <View style={styles.tableRow}>
                 <Text style={styles.rowLabel}>Cabashada:</Text>
-                <Text style={styles.rowValue}>{subject.Problem || 'No lecturer assigned'}</Text>
+                <Text style={styles.rowValue}>{subject.Problem || 'No date'}</Text>
               </View>
               <View style={styles.tableRow}>
                 <Text style={styles.rowLabel}>Nuuca Cabasho:</Text>
-                <Text style={styles.rowValue}>{subject.Cabashada || 'No lecturer assigned'}</Text>
+                <Text style={styles.rowValue}>{subject.Cabashada || 'No  data'}</Text>
               </View>
 
               <TextInput

@@ -16,6 +16,7 @@ const AppLayout = () => {
        <Stack.Screen name="Collectors/customer_search" options={{headerTitle: "Customer Information"}} />
        <Stack.Screen name="Collectors/pending_problem" options={{headerTitle: "Collectors"}} />
        <Stack.Screen name="Collectors/process_problem" options={{headerTitle: "Collectors"}} /> 
+       <Stack.Screen name="Collectors/reg_problem_customer" options={{headerTitle: "Diiwaangalin Cabasho"}} /> 
 
        <Stack.Screen name="Collectors/customer_statement" options={{headerTitle: "customer statement"}} /> 
 

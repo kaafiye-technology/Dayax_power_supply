@@ -6,7 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { router } from 'expo-router';
 
 export default function Balance() {
-  const url = 'http://dayaxpowers.com/api/report'
+  const url = 'https://dayaxpowers.com/api/report'
   
   const [balance, setBalance] = useState([]);
   
@@ -48,7 +48,7 @@ export default function Balance() {
     return (
         <View style={styles.container}>
             <View style={styles.imageContainer}>
-            <Image source={{uri: 'http://dayaxpowers.com/uploads/ktc_edit_sp/logo/logodayax.png_ktceditsp_20240925200242.png' }} style={styles.logo} />
+            <Image source={{uri: 'https://dayaxpowers.com/uploads/ktc_edit_sp/logo/logodayax.png_ktceditsp_20240925200242.png' }} style={styles.logo} />
 
             </View>
             <Text style={styles.title}>Balance</Text>

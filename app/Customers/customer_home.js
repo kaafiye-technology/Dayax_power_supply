@@ -8,7 +8,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const { width } = Dimensions.get('window');  // Get the screen width for responsive design
 
 const semesters = () => {
-  const url = 'http://dayaxpowers.com/api/report';
+  const url = 'https://dayaxpowers.com/api/report';
 
   const [balance, setBalance] = useState([]);
   const [secondData, setSecondData] = useState([]); 
